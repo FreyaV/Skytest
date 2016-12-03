@@ -1,0 +1,75 @@
+
+  <body>
+    <div class="w3-row-padding">
+      <div class="w3-panel">
+        <h1 style="text-align:center;color:black;font-size:50px;">Select a movie based on how you feel</h1>
+      </div>
+  <div class="w3-col m3 w3-center">
+    <label for="Agitated"><h3>Agitated</h3></label><br><br>
+    <label for="Happy"><h3>Happy</h3></label><br><br>
+    <label for="Tired"><h3>Tired</h3></label><br><br>
+    <label for="Scared"><h3>Scared</h3></label><br><br>
+  </div>
+  <div class="w3-col m6 w3-center">
+    <br>
+    <form action="slider.php" method="post">
+  <input type="range" name="mood1" min="0" max="2" value="1" step="1";/><br><br>
+  <input type=submit value=Submit />
+  </form>
+  <br>
+  <form action="database.php" method="post">
+  <input type="range" min="0" max="2" value="1" step="1" /><br><br>
+  <input type="submit" value="Submit">
+  </form>
+  <form action="database.php" method="post">
+  <input type="range" min="0" max="2" value="1" step="1" /><br><br>
+  <input type="submit" value="Submit">
+  </form>
+  <br>
+  <form action="database.php" method="post">
+  <input type="range" min="0" max="2" value="1" step="1" /><br><br>
+  <input type="submit" value="Submit">
+  </form>
+  </div>
+  <div class="w3-col m3 w3-center">
+    <label for="Calm"><h3>Calm</h3></label><br><br>
+    <label for="Sad"><h3>Sad</h3></label><br><br>
+    <label for="WideAwake"><h3>Wide Awake</h3></label><br><br>
+    <label for="Fearless"><h3>Fearless</h3></label><br><br>
+  </div>
+</div>
+
+
+
+    <div class="w3-row">
+    <div class="w3-col w3-container" style="width:20%"><img src=<?$xml=simplexml_load_file("images/database.xml");
+    echo $xml->programme[1]->image?> ; alt="" style="width:100%;max-width:150px"></div>
+    <div class="w3-col w3-container" style="width:20%"><img src=<?$xml=simplexml_load_file("images/database.xml");
+    echo $xml->programme[2]->image?> alt="" style="width:100%;max-width:150px"></div>
+    <div class="w3-col w3-container" style="width:20%"><img src=<?$xml=simplexml_load_file("images/database.xml");
+    echo $xml->programme[4]->image?> alt="" style="width:100%;max-width:150px"></div>
+    <div class="w3-col w3-container" style="width:20%"><img src=<?$xml=simplexml_load_file("images/database.xml");
+    echo $xml->programme[6]->image?> alt="" style="width:100%;max-width:150px"></div>
+    <div class="w3-col w3-container" style="width:20%"><img src=<?$xml=simplexml_load_file("images/database.xml");
+    echo $xml->programme[5]->image?> alt="" style="width:100%;max-width:150px"></div><br>
+
+<? $xml=simplexml_load_file("images/database.xml") or die("Error: Cannot create object");?>
+    <div class="w3-row"></div>
+    <div class="w3-row">
+    <div class="w3-col w3-container" style="width:20%"><h3><?echo $xml->programme[1]->name?></h3></div>
+    <div class="w3-col w3-container" style="width:20%"><h3><?echo $xml->programme[2]->name?></h3></div>
+    <div class="w3-col w3-container" style="width:20%"><h3><?echo $xml->programme[4]->name?></h3></div>
+    <div class="w3-col w3-container" style="width:20%"><h3><?echo $xml->programme[6]->name?></h3></div>
+    <div class="w3-col w3-container" style="width:20%"><h3><?echo $xml->programme[5]->name?></h3></div>
+
+    <div class="w3-row">
+    <div class="w3-col w3-container" style="width:20%"><p><?echo $xml->programme[1]->description?></p></div>
+    <div class="w3-col w3-container" style="width:20%"><p><?echo $xml->programme[2]->description?></p></div>
+    <div class="w3-col w3-container" style="width:20%"><p><?echo $xml->programme[4]->description?></p></div>
+    <div class="w3-col w3-container" style="width:20%"><p><?echo $xml->programme[6]->description?></p></div>
+    <div class="w3-col w3-container" style="width:20%"><p><?echo $xml->programme[5]->description?></p></div>
+</div>
+
+  </body>
+
+</html>
